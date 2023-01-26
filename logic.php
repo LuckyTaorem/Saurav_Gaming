@@ -10,14 +10,15 @@ $num_row=mysqli_num_rows($result);
 if($num_row==1){
     header('location:signup.php?q=email_err');
 }
-if($cpass != $pass){
-    header('location:signup.php?q=pass_err');
+if($cpass == $pass){
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $qy="insert into user(username,email,password) values('$username','$email','$pass')";
         if (mysqli_query($con,$qy)) {
 		    header('location:login.php?q=success');
 	    }
     }
+}else{
+    header('location:signup.php?q=pass_err');
 }
 }
 
