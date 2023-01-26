@@ -27,6 +27,12 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             <?php }?>
+            <?php if($_REQUEST['q'] == "error"){?>
+                <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                    Check your username or password!
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php }?>
         <?php }?>
             <h2 class="text-center mb-4 text-white">Welcome Back!</h2>
             <form class="form" action="logic.php" method="POST">

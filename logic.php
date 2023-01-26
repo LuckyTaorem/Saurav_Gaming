@@ -30,6 +30,8 @@ $num_row=mysqli_num_rows($result);
 $_SESSION['email']=$email;
 if($num_row==1){
     header('location:index.php');
+}else{
+    header('location:login.php?q=error');
 }
 }
 ?>
